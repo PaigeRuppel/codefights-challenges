@@ -12,10 +12,9 @@ public class PersonLocation {
     */
 
     public int toAndFro(int a, int b, int t) {
-        int diff = b - a;
-        if (t < diff) {
-            return a + t - 1;
-        }
-        return 3;
+        int diff = (a < b) ? a-b : b-a;
+        int rem = t % diff;
+        int min = (a < b) ? a: b;
+        return min + rem;
     }
 }

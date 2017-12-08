@@ -24,11 +24,19 @@ public class PersonLocationTest {
     }
 
     @Test
-    public void toAndFroWithTime8AndA1AndB10ShouldReturnPosition8() {
+    public void toAndFroWithTime8AndA1AndB10ShouldReturnPosition9() {
         int a = 1;
         int b = 10;
         int t = 8;
-        assertThat(underTest.toAndFro(a, b, t), is(8));
+        assertThat(underTest.toAndFro(a, b, t), is(9));
+    }
+
+    @Test
+    public void toAndFroWithTime8AndA10AndB4ShouldReturnPosition6() {
+        int a = 10;
+        int b = 4;
+        int t = 8;
+        assertThat(underTest.toAndFro(a, b, t), is(6));
     }
 
 }
