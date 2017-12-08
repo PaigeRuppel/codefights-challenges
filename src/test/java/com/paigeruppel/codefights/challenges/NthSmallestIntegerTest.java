@@ -1,3 +1,4 @@
+package com.paigeruppel.codefights.challenges;
 
 import org.junit.Before;
 import org.junit.Test;
