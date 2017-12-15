@@ -20,4 +20,6 @@ public class BestFriendPredictor {
             f+=a.get(x);
         return f;
     }
+
+
 }

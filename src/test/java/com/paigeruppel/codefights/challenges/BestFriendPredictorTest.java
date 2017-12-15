@@ -3,6 +3,9 @@ package com.paigeruppel.codefights.challenges;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -34,4 +37,9 @@ public class BestFriendPredictorTest {
     public void isBestFriendNamesTrueForThorAndMulan() {
         assertTrue(underTest.bestFriendNames("Thor", "Mulan"));
     }
+
+
 }
+
+
+
