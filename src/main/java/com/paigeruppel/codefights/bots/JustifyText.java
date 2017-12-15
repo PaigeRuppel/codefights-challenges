@@ -1,59 +1,38 @@
 package com.paigeruppel.codefights.bots;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JustifyText {
 
     String[] textJustification(String[] words, int l) {
-        int lines = findLineNumber(words, l);
-        String[] justified = new String[lines];
-        int[] wordsPerLine = findWordsPerLine(words, l, lines);
-
+        List<String> justified = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
-        int start = 0;
-        for (int i = 0; i < justified.length; i++) {
-            for (int j = start; j < wordsPerLine[i]; j++) {
-                sb.append(words[j] + " ");
-            }
-            justified[i] = sb.toString();
-            start += wordsPerLine[i];
-        }
 
-        int charCount = 0;
-        int index = 0;
+        int charCount = 0, wordCount = 0;
 
-
-        return justified;
-    }
-
-    int findLineNumber(String[] words, int l) {
-        int charCount = 0;
-        for (String s : words) {
-            charCount += s.toCharArray().length;
-        }
-        charCount += words.length - 1;
-        int remainder = charCount % l;
-        int lines = (remainder > 0) ? (charCount / l + 1) : charCount/l;
-        return lines;
-    }
-
-    int[] findWordsPerLine(String[] words, int l, int lines) {
-        int[] wordsPerLine = new int[lines];
-        int count = 0;
-        int index = 0;
-        int charCount = 0;
-        for (String s : words) {
-            int sLength = s.length() + 1;
-            if (charCount + sLength <= l) {
-                count++;
-                charCount += sLength;
+        for (int i = 0 ; i < words.length; i++) {
+            int length = words[i].length() + 1;
+            if (charCount + length > l) {
+                int spaces = l - charCount;
+                charCount = length;
+                justified.add(sb.toString());
+                wordCount = 1;
             } else {
-                wordsPerLine[index] = count;
-                count = 0;
-                charCount = 0;
-                index++;
+                charCount += length;
+                wordCount++;
+                if (wordCount != 0)
+                    sb.append(" ");
+                sb.append(words[i]);
             }
         }
-        wordsPerLine[index] = count;
-        return wordsPerLine;
+        justified.add(sb.toString());
+        String[] justifiedArray = new String[justified.size()];
+        for (int i = 0; i < justified.size(); i++) {
+            justifiedArray[i] = justified.get(i);
+        }
+        return justifiedArray;
+
     }
 
 }
