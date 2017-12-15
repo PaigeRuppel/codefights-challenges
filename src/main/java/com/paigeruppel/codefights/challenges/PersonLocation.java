@@ -1,5 +1,8 @@
 package com.paigeruppel.codefights.challenges;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PersonLocation {
 
     /*
@@ -12,9 +15,10 @@ public class PersonLocation {
     */
 
     public int toAndFro(int a, int b, int t) {
-        int diff = (a < b) ? a-b : b-a;
-        int rem = t % diff;
-        int min = (a < b) ? a: b;
-        return min + rem;
+        int d = a - b;
+        int p = ((t / d) % 2 == 0 ) ? a: b;
+        int r = (p == a || a > b )? t % d : -(t % d);
+        return p + r;
     }
+
 }

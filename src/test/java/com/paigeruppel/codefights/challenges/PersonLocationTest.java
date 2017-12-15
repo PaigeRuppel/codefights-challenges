@@ -39,4 +39,20 @@ public class PersonLocationTest {
         assertThat(underTest.toAndFro(a, b, t), is(6));
     }
 
+    @Test
+    public void toAndFroWithTime5AndA2AndB4ShouldReturnPosition3() {
+        int a = 2;
+        int b = 4;
+        int t = 5;
+        assertThat(underTest.toAndFro(a, b, t), is(3));
+    }
+
+    @Test
+    public void toAndFroWithTime548AndA42AndB150ShouldReturnPosition142() {
+        int a = 42;
+        int b = 150;
+        int t = 548;
+        assertThat(underTest.toAndFro(a, b, t), is(142));
+    }
+
 }
