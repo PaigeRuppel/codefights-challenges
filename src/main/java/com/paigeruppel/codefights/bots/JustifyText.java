@@ -1,6 +1,6 @@
 package com.paigeruppel.codefights.bots;
 
-public class practice {
+public class JustifyText {
 
     String[] textJustification(String[] words, int l) {
         int lines = findLineNumber(words, l);

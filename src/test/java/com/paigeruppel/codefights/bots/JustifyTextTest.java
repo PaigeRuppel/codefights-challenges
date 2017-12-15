@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class practiceTest {
-    private practice underTest;
+public class JustifyTextTest {
+    private JustifyText underTest;
 
     @Before
     public void setup() {
-        underTest = new practice();
+        underTest = new JustifyText();
     }
 
     @Test
