@@ -24,4 +24,14 @@ public class BestFriendPredictorTest {
     public void isBestFriendNamesFalseForAliceAndDiego() {
         assertFalse(underTest.bestFriendNames("Alice", "Diego"));
     }
+
+    @Test
+    public void isBestFriendNamesFalseForBruceAndClark() {
+        assertFalse(underTest.bestFriendNames("Alice", "Diego"));
+    }
+
+    @Test
+    public void isBestFriendNamesTrueForThorAndMulan() {
+        assertTrue(underTest.bestFriendNames("Thor", "Mulan"));
+    }
 }
