@@ -17,10 +17,21 @@ public class KitchenPlannerTest {
     @Test
     public void chefsWithEqualValuesForOneFoodShouldBeDeterminedBySecondFood() {
         String[] chefs = {"Jack", "Jeanne"};
-        String[] food =  {"Pasta", "Chicken"};
-        int[][] values = {{3,6}, {3,4}};
+        String[] food = {"Pasta", "Chicken"};
+        int[][] values = {{3, 6}, {3, 4}};
         String[] answer = {"Jack - Chicken", "Jeanne - Pasta"};
         assertArrayEquals(answer, underTest.areYouHungary(chefs, food, values));
     }
+
+    @Test
+    public void inputWithOneFoodAndThreeChefsShouldPreferenceHighestValueAndAddNothingForOthers() {
+        String[] chefs = {"Hayley", "Amy", "Brendan"};
+        String[] food = {"Salad"};
+        int[][] values = {{5}, {8}, {-1}};
+        String[] answer = {"Hayley - Nothing", "Amy - Salad", "Brendan - Nothing"};
+        assertArrayEquals(answer, underTest.areYouHungary(chefs, food, values));
+    }
+
+
 }
 
