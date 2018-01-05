@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class KitchenPlanner {
     public String[] areYouHungary(String[] chefs, String[] food, int[][] values) {
-        int maxValue = -2;
+        int maxValue = -1;
         int index = 0;
 
         Map<String, String> pairs = new HashMap<>();
@@ -22,12 +22,19 @@ public class KitchenPlanner {
             pairs.put(chefs[index], food[j]);
         }
         String[] answer = new String[chefs.length];
+        String[] impossible = {"Impossible"};
+        int nothing = 0;
         for (int i = 0; i < answer.length; i++) {
             String chef = chefs[i];
             StringBuilder foodForChef = new StringBuilder();
-            foodForChef.append(pairs.getOrDefault(chef, "Nothing"));
+            if (!pairs.containsKey(chef)) {
+                foodForChef.append("Nothing");
+                nothing++;
+            } else {
+                foodForChef.append(pairs.get(chef));
+            }
             answer[i] = chef + " - " + foodForChef.toString();
         }
-        return answer;
+        return (nothing == chefs.length - food.length) ? answer : impossible;
     }
 }

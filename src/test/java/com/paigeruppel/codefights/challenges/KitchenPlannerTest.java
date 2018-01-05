@@ -32,6 +32,14 @@ public class KitchenPlannerTest {
         assertArrayEquals(answer, underTest.areYouHungary(chefs, food, values));
     }
 
+    @Test
+    public void shouldReturnImpossibleIfNoChefCanMakeOneFood() {
+        String[] chefs = {"Jeff", "Dalia"};
+        String[] food = {"Dessert", "Tea"};
+        int[][] values = {{7, -1}, {5, -1}};
+        String[] answer = {"Impossible"};
+        assertArrayEquals(answer, underTest.areYouHungary(chefs, food, values));
+    }
 
 }
 
