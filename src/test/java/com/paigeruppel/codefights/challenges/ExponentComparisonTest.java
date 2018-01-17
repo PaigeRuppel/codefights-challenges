@@ -20,4 +20,16 @@ public class ExponentComparisonTest {
         int[] m = {2, 5, 2, 5, 5, 2, 5, 2};
         assertThat(underTest.compare2Power(m), is(1));
     }
+
+    @Test
+    public void shouldReturn0AEqualsBTestCase2() {
+        int[] m = {2, 3, 4, 5, 2, 3, 4, 5};
+        assertThat(underTest.compare2Power(m), is(0));
+    }
+
+    @Test
+    public void shouldReturn1AIsGreaterThanBTEstCase3() {
+        int[] m = {3, 3, 7, 6, 5, 6, 7, 4};
+        assertThat(underTest.compare2Power(m), is(1));
+    }
 }
