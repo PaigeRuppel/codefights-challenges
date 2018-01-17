@@ -28,14 +28,20 @@ public class ExponentComparisonTest {
     }
 
     @Test
-    public void shouldReturn1AIsGreaterThanBTEstCase3() {
+    public void shouldReturn1AIsGreaterThanBTestCase3() {
         int[] m = {3, 3, 7, 6, 5, 6, 7, 4};
         assertThat(underTest.compare2Power(m), is(1));
     }
 
     @Test
-    public void shouldRetrunNeg1BIsGreaterThanATestCase4() {
+    public void shouldReturnNeg1BIsGreaterThanATestCase4() {
         int[] m ={3, 2, 5, 6, 5, 3, 7, 5};
         assertThat(underTest.compare2Power(m), is(-1));
+    }
+
+    @Test
+    public void shouldReturnNeg1BIsGreaterThanATestCase5() {
+        int[] m ={10, 17, 13, 16, 9, 8, 15, 17};
+        assertThat(underTest.compare2Power(m),is(-1));
     }
 }
