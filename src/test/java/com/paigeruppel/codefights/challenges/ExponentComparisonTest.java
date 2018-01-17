@@ -32,4 +32,10 @@ public class ExponentComparisonTest {
         int[] m = {3, 3, 7, 6, 5, 6, 7, 4};
         assertThat(underTest.compare2Power(m), is(1));
     }
+
+    @Test
+    public void shouldRetrunNeg1BIsGreaterThanATestCase4() {
+        int[] m ={3, 2, 5, 6, 5, 3, 7, 5};
+        assertThat(underTest.compare2Power(m), is(-1));
+    }
 }

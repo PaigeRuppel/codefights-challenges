@@ -11,12 +11,11 @@ public class ExponentComparison {
     */
 
     public int compare2Power(int[] m) {
-        int d = 0;
-        for (int a = 3, b = a + 4; a > - 1; a--) {
-            if (m[a] > m[b]) {
-                return 1;
-            }
+        double cd = Math.pow(m[2], m[3]);
+        double zt = Math.pow(m[6], m[7]);
+        if (cd == zt) {
+            return 0;
         }
-        return 0;
+        return (cd > zt) ? 1 : -1;
     }
 }
